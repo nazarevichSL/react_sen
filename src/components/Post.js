@@ -1,4 +1,4 @@
-export default function Post ({title}) {
+export default function Post({title}) {
     return (
         <div>
             {title.title}
