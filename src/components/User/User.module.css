@@ -1,5 +1,6 @@
 .wrap {
     display: flex;
+    border: 2px solid silver;
     margin-bottom: 10px;
-
+    padding-left: 10px;
 }
