@@ -1,6 +1,8 @@
-const Post = ({post:{id, userId, title, body}}) => {
+import css from './Post.module.css'
+
+const Post = ({post: {id, userId, title, body}}) => {
     return (
-        <div>
+        <div className={css.wrap}>
             <div>Id:{id}</div>
             <div>UserId:{userId}</div>
             <div>Title:{title}</div>

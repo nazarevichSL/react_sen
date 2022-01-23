@@ -1,17 +1,19 @@
 import {useEffect, useState} from "react";
+
 import {userService} from "../../services/user.service";
 import User from "../User/User";
+import css from './Users.module.css'
 
 const Users = ({getUser}) => {
-    const [users,setUsers] = useState([]);
+    const [users, setUsers] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         userService.getAll().then(value => setUsers(value))
-    },[])
+    }, [])
 
     return (
-        <div>
-            {users.map(user =><User key={user.id} user={user} getUser={getUser}/>)}
+        <div className={css.wrap}>
+            {users.map(user => <User key={user.id} user={user} getUser={getUser}/>)}
 
         </div>
     );

@@ -7,15 +7,15 @@ import css from './App.module.css'
 import {postService} from "./services/post.service";
 
 const App = () => {
-    const [user,setUser] = useState(null);
-    const [posts,setPosts] = useState([]);
+    const [user, setUser] = useState(null);
+    const [posts, setPosts] = useState([]);
 
     const getUser = (user) => {
         setUser(user)
         setPosts([])
     }
 
-    const detUserId = (id)=>{
+    const detUserId = (id) => {
         postService.getByUserId(id).then(value => setPosts([...value]))
 
     }
@@ -23,7 +23,7 @@ const App = () => {
     return (
         <div>
             <div className={css.wrap}>
-            <Users getUser={getUser}/>
+                <Users getUser={getUser}/>
                 {user && <UserDetails user={user} detUserId={detUserId}/>}
             </div>
             {!!posts.length && <Posts posts={posts}/>}
